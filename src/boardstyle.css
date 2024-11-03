@@ -1,0 +1,15 @@
+.square{
+    border-radius: 5%;
+    width: 50px;
+    height: 50px;
+    
+    
+    
+    color:rgba(255, 0, 0, 0.465);
+    background:rgb(165, 144, 200);
+    font-size: 30px;
+    font-weight: 600;
+    
+    
+    
+}
