@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     strategy:
       matrix:
         node-version: [22.x]
@@ -31,7 +31,7 @@ jobs:
         path: ./build # Adjust the path if your build artifacts are in a different folder
 
   test:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     needs: build  # This makes the test job dependent on the build job
     strategy:
       matrix:
@@ -53,7 +53,7 @@ jobs:
     - run: npm test
     
   build_docker_image:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     needs: test
 
     steps:
@@ -77,7 +77,7 @@ jobs:
           tags: sharmina/tic-tac-toe_v1:latest  # Replace with your Docker Hub username and repo name
     # Job to deploy Docker container to VM
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     needs: build_docker_image  # This job will run only after the build job completes successfully
 
     steps:
