@@ -49,7 +49,7 @@ function Board(){
       
     }
     else{
-      nextSquares[i] = "X";
+      nextSquares[i] = "P";
     }
     
     
@@ -63,7 +63,7 @@ function Board(){
     status = "Winner: " + winner;
       
     } else {
-      status = "Next Player: " + (oIsNext ? "O" : "X")
+      status = "Next Player: " + (oIsNext ? "O" : "P")
       
     }
     console.log(status)
