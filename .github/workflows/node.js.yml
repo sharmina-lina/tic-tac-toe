@@ -91,7 +91,7 @@ jobs:
           VM_HOST: ${{ secrets.VM_HOST }}
           VM_USER: ${{ secrets.VM_USER }}
         run: |
-          ssh -o StrictHostKeyChecking=no -i vm_key.pem $VM_USER@$VM_HOST << 'EOF'
+          ssh -tt -o StrictHostKeyChecking=no -i vm_key.pem $VM_USER@$VM_HOST << 'EOF'
             # Log in to Docker Hub (on the VM)
             echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
             
