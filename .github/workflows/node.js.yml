@@ -96,14 +96,14 @@ jobs:
             echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
             
             # Pull the latest Docker image
-            docker pull yourusername/tic-tac-toe:latest
+            docker pull sharmina/tic-tac-toe_v1:latest
 
             # Stop and remove any existing container
             docker stop tic-tac-toe || true
             docker rm tic-tac-toe || true
 
             # Run the new container
-            docker run -d -p 3000:3000 --name tic-tac-toe yourusername/tic-tac-toe:latest
+            docker run -d -p 3000:3000 --name tic-tac-toe sharmina/tic-tac-toe_v1:latest
           EOF
 
 
