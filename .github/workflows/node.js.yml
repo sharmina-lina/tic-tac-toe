@@ -101,6 +101,7 @@ jobs:
             # Stop and remove any existing container
             docker stop tic-tac-toe || true
             docker rm tic-tac-toe || true
+            
 
             # Run the new container
             docker run -d -p 3000:3000 --name tic-tac-toe sharmina/tic-tac-toe_v1:latest
